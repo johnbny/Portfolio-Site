@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <section class="navigation">
+        <div class="personal-logo">
+            <img src="./assets/Personal-Logo.png" alt="Personal-Logo.JPG">
+        </div>
+        <div> 
+            <a class="nav-link" href="index.html">About</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#contact-modal" id="contact-trigger">
+    Contact
+</a>
+<a class="nav-link" href="#" id="theme-toggle" aria-label="Toggle color theme">
+    <i class="fa-solid fa-circle-half-stroke"></i>
+</a>     
+        </div>
+    </section>
+    <section class="landing-page">
+        <div class="landing-page-content">
+            <h2>Hey</h2> <br>
+            <h2 class="outlined-text">I'm John</h2>
+            <p class="landing-page-bio">I am a <span class="highlighted-text">software engineer</span> with a passion for creating innovative solutions. I specialize in web development and have experience working with various technologies and frameworks. My goal is to build user-friendly applications that make a positive impact on people's lives. Here's a little <span class="highlighted-text">about me</span>.</p>
+        </div>
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/john-doe" target="_blank"><i class="fa-brands fa-linkedin click"></i></a>
+            <a href="https://github.com/johnbny" target="_blank"><i class="fa-brands fa-square-github click"></i></a>
+           
+        </div>
+        <!-- SCROLL INDICATOR -->
+<button class="scroll-indicator" id="scroll-indicator" aria-label="Scroll to projects">
+<a href="#projects" class="scroll-link">
+    <i class="fa-solid fa-angle-down"></i>
+</a>
+</button>
+<!-- TEST -->
+
+<!-- MODAL -->
+
+ 
+
+
+
+<div class="modal-overlay" id="contact-modal" aria-hidden="true">
+
+    <div class="modal" role="dialog" aria-modal="true"
+         aria-labelledby="modal-title">
+
+        <!-- Left half: About -->
+        <section class="modal__about">
+            <span class="modal__eyebrow">ABOUT ME</span>
+
+            <h2 class="modal__title" id="modal-title">
+                Full-Stack<br>
+                <span>Engineer.</span>
+            </h2>
+
+            <p class="modal__text">
+                I build modern, responsive digital experiences
+                from front to back. I enjoy turning creative
+                ideas into clean, functional web applications.
+            </p>
+
+            <span class="modal__label">TECHNOLOGIES</span>
+
+            <div class="modal__tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Node.js</span>
+            </div>
+
+            <span class="modal__footer">
+                DESIGN · DEVELOPMENT · DETAIL
+            </span>
+        </section>
+
+        <!-- Right half: Contact form -->
+        <section class="modal__contact">
+
+            <button class="modal__close" id="modal-close"
+                    type="button" aria-label="Close modal">
+                &times;
+            </button>
+
+            <span class="modal__eyebrow">GET IN TOUCH</span>
+
+            <h2 class="modal__title">
+                Let's talk<span>.</span>
+            </h2>
+
+            <p class="modal__text">
+                Have a project in mind? Send me a message.
+            </p>
+
+            <form class="contact-form"
+                  action="https://formspree.io/f/YOUR_FORM_ID"
+                  method="POST">
+
+                <div class="contact-form__group">
+                    <label for="contact-name">Your name</label>
+                    <input
+                        type="text"
+                        id="contact-name"
+                        name="name"
+                        placeholder="John Smith"
+                        autocomplete="name"
+                        required>
+                </div>
+
+                <div class="contact-form__group">
+                    <label for="contact-email">Your email</label>
+                    <input
+                        type="email"
+                        id="contact-email"
+                        name="email"
+                        placeholder="john@example.com"
+                        autocomplete="email"
+                        required>
+                </div>
+
+                <div class="contact-form__group">
+                    <label for="contact-message">Your message</label>
+                    <textarea
+                        id="contact-message"
+                        name="message"
+                        placeholder="Tell me about your project..."
+                        rows="4"
+                        required></textarea>
+                </div>
+
+                <button class="contact-form__submit" type="submit">
+                    Send message <span>↗</span>
+                </button>
+
+            </form>
+
+            <span class="modal__footer">
+                I'LL GET BACK TO YOU SOON
+            </span>
+        </section>
+
+    </div>
+</div>
+
+
+
+<!-- MODAL  -->
+
+
+
+    </section>
+    <div class="mail_button click js-modal-trigger">
+        <img src="./assets/MAIl2.PNG" alt="MAIL.PNG">
+    </div>
+    <section class="project__section" id="projects">
+        <div class="project__section__title">
+        <h2>Here are some of my <span class="colored--text">projects</span></h2>
+        </div>
+
+        <div class="project__wrapper">
+            <img src="./assets/Project-1.png" alt="Project-1.JPG">
+            <div class="project__description--bg">
+            <div class="project__description">
+                <h3>Project</h3>
+                <h4>HTML, CSS, JavaScript</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quam optio quaerat modi delectus suscipit quisquam illum debitis magnam nam?</p>
+                <div class="project__link click">
+                    <a href="https://github.com/johnbny/project-1" target="_blank">
+                        <i class="fa-brands fa-square-github"></i>
+                    </a>
+                </div>
+            </div>
+         </div>
+        </div>
+
+        <div class="project__wrapper">
+            <img src="./assets/Project-1.png" alt="Project-1.JPG">
+            <div class="project__description--bg">
+            <div class="project__description">
+                <h3>Project</h3>
+                <h4>HTML, CSS, JavaScript</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quam optio quaerat modi delectus suscipit quisquam illum debitis magnam nam?</p>
+                <div class="project__link click">
+                    <a href="https://github.com/johnbny/project-1" target="_blank">
+                        <i class="fa-brands fa-square-github"></i>
+                    </a>
+                </div>
+            </div>
+         </div>
+        </div>
+
+    </section>
+
+    <section class="footer">
+        <div class="footer__logo">
+            <img src="./assets/Personal-Logo.png" alt="Personal-Logo.JPG">
+        </div>
+        <div class="footer__links">
+            <a class="footer__link nav-link" href="projects.html">GitHub</a>
+            <a class="footer__link nav-link" href="index.html">LinkedIn</a>
+            <a class="footer__link nav-link" href="about.html">Email</a>
+            <a class="footer__link nav-link" href="projects.html">Resume</a>
+        </div>
+        <div class="footer__copyright">
+            <p>&copy; 2023 John Doe. All rights reserved.</p>
+        </div>
+    </section>
+</body>
+</html>
