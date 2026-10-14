@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "ps944456VELoHcHxZ",
+      });
+   })();
+</script>
 </head>
 <body>
     <section class="navigation">
@@ -102,9 +112,8 @@
                 Have a project in mind? Send me a message.
             </p>
 
-            <form class="contact-form"
-                  action="https://formspree.io/f/YOUR_FORM_ID"
-                  method="POST">
+            <form class="contact-form" id="contact__form" onsubmit="contact(event)">
+              
 
                 <div class="contact-form__group">
                     <label for="contact-name">Your name</label>
@@ -143,7 +152,12 @@
                 </button>
 
             </form>
-
+            <div class="modal__overlay modal__overlay--loading">
+                <div class="spinner"></div>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for leaving a message! Looking forward to speaking to you soon.
+            </div>
             <span class="modal__footer">
                 I'LL GET BACK TO YOU SOON
             </span>
