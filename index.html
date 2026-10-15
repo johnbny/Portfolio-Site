@@ -19,21 +19,36 @@
 </script>
 </head>
 <body>
-    <section class="navigation">
-        <div class="personal-logo">
-            <img src="./assets/Personal-Logo.png" alt="Personal-Logo.JPG">
-        </div>
-        <div> 
-            <a class="nav-link" href="index.html">About</a>
-            <a class="nav-link" href="#projects">Projects</a>
-            <a class="nav-link" href="#contact-modal" id="contact-trigger">
-    Contact
-</a>
-<a class="nav-link" href="#" id="theme-toggle" aria-label="Toggle color theme">
-    <i class="fa-solid fa-circle-half-stroke"></i>
-</a>     
-        </div>
-    </section>
+    
+<section class="navigation">
+    <div class="personal-logo">
+        <img src="./assets/Personal-Logo.png" alt="Personal Logo">
+    </div>
+
+    <div class="navigation-links" id="navigation-links">
+        <a class="nav-link" href="index.html">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact-modal" id="contact-trigger">
+            Contact
+        </a>
+    </div>
+
+    <div class="navigation-controls">
+        <a class="nav-link theme-toggle" href="#" id="theme-toggle"
+           aria-label="Toggle color theme">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </a>
+
+        <button class="hamburger" id="hamburger"
+                type="button" aria-label="Open navigation menu"
+                aria-controls="navigation-links" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</section>
+
     <section class="landing-page">
         <div class="landing-page-content">
             <h2>Hey</h2> <br>

@@ -113,3 +113,63 @@ function contact(event) {
         alert('Failed to send your message. Please try again.');
     });
 }
+
+
+const hamburger = document.getElementById("hamburger");
+const navigationLinks = document.getElementById("navigation-links");
+
+// Open and close the full-screen menu
+function toggleMenu(isOpen) {
+    navigationLinks.classList.toggle("is-open", isOpen);
+    hamburger.classList.toggle("is-active", isOpen);
+
+    hamburger.setAttribute("aria-expanded", isOpen);
+    hamburger.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+    document.body.classList.toggle("menu-open", isOpen);
+}
+
+// Hamburger click
+hamburger.addEventListener("click", () => {
+    const isOpen = navigationLinks.classList.contains("is-open");
+    toggleMenu(!isOpen);
+});
+
+// Close menu when selecting a navigation link
+navigationLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+        toggleMenu(false);
+    });
+});
+
+// Close menu when clicking outside the navigation
+document.addEventListener("click", (event) => {
+    if (
+        navigationLinks.classList.contains("is-open") &&
+        !hamburger.contains(event.target) &&
+        !navigationLinks.contains(event.target)
+    ) {
+        toggleMenu(false);
+    }
+});
+
+// Close menu with Escape key
+document.addEventListener("keydown", (event) => {
+    if (
+        event.key === "Escape" &&
+        navigationLinks.classList.contains("is-open")
+    ) {
+        toggleMenu(false);
+        hamburger.focus();
+    }
+});
+
+// Close menu if the screen is resized to desktop
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 600) {
+        toggleMenu(false);
+    }
+});

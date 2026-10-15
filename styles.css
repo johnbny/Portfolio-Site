@@ -923,3 +923,724 @@ html[data-theme="dark"] .mail_button img {
         transform: rotate(360deg);
     }
 }
+
+
+/* RESPONSIVENESS */
+
+
+/* ========================================
+   RESPONSIVE DESIGN — TABLETS & MOBILE
+   Add this at the bottom of styles.css
+======================================== */
+
+/* Prevent horizontal overflow */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Tablets and smaller laptops */
+@media (max-width: 900px) {
+
+    /* Navigation */
+    .navigation {
+        padding: 12px 25px;
+    }
+
+    .personal-logo img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .nav-link {
+        font-size: 17px;
+        margin-left: 18px;
+    }
+
+    /* Hero */
+    .landing-page {
+        min-height: 85vh;
+        height: auto;
+        padding: 3rem 2rem 2rem;
+    }
+
+    .landing-page-content h2 {
+        font-size: clamp(4rem, 9vw, 6rem);
+    }
+
+    .outlined-text {
+        margin-top: -1.5rem;
+    }
+
+    .landing-page-bio {
+        width: 65%;
+        max-width: 600px;
+        font-size: 1.2rem;
+    }
+
+    .scroll-indicator {
+        margin-top: 7rem;
+    }
+
+    /* Projects */
+    .project__section h2 {
+        font-size: 2.5rem;
+        margin: 0 1.5rem;
+    }
+
+    .project__section__title {
+        margin-bottom: 3rem;
+    }
+
+    .project__wrapper {
+        width: 90%;
+        margin-bottom: 3rem;
+    }
+
+    .project__description {
+        width: 90%;
+        font-size: 2rem;
+    }
+
+    .project__description h3 {
+        font-size: 2rem;
+    }
+
+    .project__description h4 {
+        font-size: 1rem;
+    }
+
+    .project__description p {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer__links {
+        width: 75%;
+    }
+
+    .footer__links a {
+        font-size: 1.2rem;
+    }
+
+    .footer__copyright {
+        font-size: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    /* Mail button */
+    .mail_button {
+        width: 95px;
+        height: 95px;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+
+/* ========================================
+   MOBILE PHONES
+======================================== */
+
+@media (max-width: 600px) {
+
+    /* Global spacing */
+    body {
+        font-size: 16px;
+    }
+
+    /* Navigation */
+    .navigation {
+        padding: 10px 16px;
+        gap: 10px;
+    }
+
+    .personal-logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .navigation > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: clamp(10px, 3vw, 18px);
+    }
+
+    .nav-link {
+        font-size: clamp(13px, 3.5vw, 16px);
+        margin-left: 0;
+        white-space: nowrap;
+    }
+
+    .nav-link i {
+        font-size: 17px;
+    }
+
+    /* Hero section */
+    .landing-page {
+        min-height: calc(100svh - 65px);
+        height: auto;
+        padding: 4rem 1.25rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .landing-page-content {
+        width: 100%;
+    }
+
+    .landing-page-content h2 {
+        font-size: clamp(3.5rem, 15vw, 5rem);
+        line-height: 1.05;
+    }
+
+    .landing-page-content br {
+        display: none;
+    }
+
+    .outlined-text {
+        margin-top: 0.15rem;
+    }
+
+    .landing-page-bio {
+        width: 100%;
+        max-width: 440px;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-top: 1.5rem;
+    }
+
+    /* Social links */
+    .socials {
+        margin-top: 1rem;
+    }
+
+    .socials i {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+        align-self: center;
+        margin: auto auto 0;
+        padding-top: 3rem;
+        font-size: 25px;
+    }
+
+    /* Floating mail button */
+    .mail_button {
+        width: 124px;
+        height: 124px;
+        right: 12px;
+        bottom: 12px;
+    }
+
+    /* Projects section */
+    .project__section {
+        padding: 2.5rem 0 1rem;
+    }
+
+    .project__section h2 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+        line-height: 1.25;
+        margin: 0 1.25rem;
+        font-weight: 500;
+    }
+
+    .project__section__title {
+        margin-bottom: 2rem;
+    }
+
+    .project__wrapper {
+        width: calc(100% - 32px);
+        margin: 0 auto 2rem;
+    }
+
+    .project__wrapper img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+    }
+
+    /*
+       Touchscreens do not have hover.
+       Keep project details readable on phones.
+    */
+    .project__description--bg {
+        position: relative;
+        top: auto;
+        left: auto;
+        height: auto;
+        aspect-ratio: auto;
+        opacity: 1;
+        padding: 1.25rem;
+        border-radius: 0 0 6px 6px;
+        background-color: #e9e9e9;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        transition: none;
+    }
+
+    .project__description {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        transform: none;
+        opacity: 1;
+        color: #171717;
+        text-align: left;
+        font-size: 1rem;
+        text-shadow: none;
+        transition: none;
+    }
+
+    .project__description h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .project__description h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.65rem;
+        font-weight: 500;
+    }
+
+    .project__section p,
+    .project__description p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .project__link {
+        margin-top: 0.8rem;
+    }
+
+    .project__link i {
+        color: #171717;
+        font-size: 1.8rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 1.5rem 1rem;
+        align-items: center;
+    }
+
+    .footer__logo {
+        width: 75px;
+        height: 75px;
+    }
+
+    .footer__links {
+        width: 100%;
+        max-width: 350px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem 1.2rem;
+        margin: 0.75rem auto;
+    }
+
+    .footer__links a {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .footer__copyright {
+        width: 100%;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    /* ====================================
+       CONTACT MODAL — MOBILE
+    ==================================== */
+
+    .modal-overlay {
+        padding: 10px;
+        align-items: flex-start;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .modal {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 460px;
+        max-height: none;
+        height: auto;
+        margin: auto;
+        overflow: visible;
+        border-radius: 12px;
+    }
+
+    .modal__about,
+    .modal__contact {
+        width: 100%;
+        min-width: 0;
+        padding: 2rem 1.25rem;
+    }
+
+    .modal__about {
+        transform: translateY(-20px);
+    }
+
+    .modal__contact {
+        transform: translateY(20px);
+    }
+
+    .modal-overlay.is-open .modal__about,
+    .modal-overlay.is-open .modal__contact {
+        transform: translateY(0);
+    }
+
+    .modal-overlay.is-closing .modal__about {
+        transform: translateY(-20px);
+    }
+
+    .modal-overlay.is-closing .modal__contact {
+        transform: translateY(20px);
+    }
+
+    .modal__eyebrow {
+        font-size: 0.65rem;
+        margin-bottom: 1rem;
+    }
+
+    .modal__title {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+        letter-spacing: -1px;
+        margin-bottom: 1rem;
+    }
+
+    .modal__text {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin-bottom: 1.4rem;
+    }
+
+    .modal__tech {
+        gap: 0.5rem;
+    }
+
+    .modal__tech span {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.65rem;
+    }
+
+    .modal__footer {
+        padding-top: 1.5rem;
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+
+    .modal__close {
+        width: 34px;
+        height: 34px;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .contact-form {
+        gap: 1rem;
+    }
+
+    .contact-form__group {
+        gap: 0.4rem;
+    }
+
+    .contact-form__group label {
+        font-size: 0.8rem;
+    }
+
+    .contact-form__group input,
+    .contact-form__group textarea {
+        font-size: 16px;
+        padding: 0.75rem 0;
+    }
+
+    .contact-form__group textarea {
+        min-height: 90px;
+    }
+
+    .contact-form__submit {
+        padding: 0.9rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Loading and success overlays */
+    .modal__overlay--loading {
+        font-size: 2rem;
+    }
+
+    .modal__overlay--success {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .spinner {
+        width: 75px;
+        height: 75px;
+        border-width: 4px;
+    }
+}
+
+
+/* Extra-small phones */
+@media (max-width: 360px) {
+
+    .navigation {
+        padding: 10px;
+    }
+
+    .personal-logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .navigation > div:last-child {
+        gap: 9px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .nav-link i {
+        font-size: 15px;
+    }
+
+    .landing-page {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .landing-page-bio {
+        font-size: 1rem;
+    }
+
+    .modal-overlay {
+        padding: 6px;
+    }
+
+    .modal__about,
+    .modal__contact {
+        padding: 1.5rem 1rem;
+    }
+}
+
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-indicator {
+        animation: none;
+    }
+
+    .project__description,
+    .project__description--bg {
+        transition: none;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .navigation {
+        position: relative;
+        z-index: 1000;
+        padding: 10px 16px;
+        gap: 12px;
+    }
+
+    .personal-logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .navigation-controls {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-left: auto;
+        z-index: 1002;
+    }
+
+    .theme-toggle {
+        order: 1;
+        font-size: 18px;
+    }
+
+    .theme-toggle i {
+        font-size: 19px;
+    }
+
+    /* Hamburger button */
+  
+@media (max-width: 600px) {
+    .hamburger {
+        display: flex;
+        order: 2;
+        position: relative;
+        z-index: 1003;
+        color: inherit;
+        width: 32px;
+        height: 32px;
+        padding: 5px 2px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: currentColor;
+        border-radius: 2px;
+        transition:
+            transform 0.35s ease,
+            opacity 0.25s ease,
+            width 0.25s ease;
+    }
+
+    /* Hamburger becomes an X */
+    .hamburger.is-active span:first-child {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.is-active span:nth-child(2) {
+        opacity: 0;
+        width: 0;
+    }
+
+    .hamburger.is-active span:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Full-screen menu */
+    .navigation-links {
+        position: fixed;
+        inset: 0;
+        z-index: 1001;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        margin: 0;
+        padding: 80px 24px;
+
+        background: #f5f5f5;
+        color: #171717;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        /* Start above the screen's final position */
+        transform: translateY(-35px);
+
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+
+        transition:
+            opacity 0.45s ease,
+            transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 0.45s ease;
+    }
+
+    /* Fade in while sliding downward */
+    .navigation-links.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* Navigation titles */
+    .navigation-links .nav-link {
+        display: block;
+        width: fit-content;
+        padding: 18px 10px;
+        margin: 0;
+
+        color: #171717;
+        font-size: clamp(2rem, 8vw, 3rem);
+        font-weight: 300;
+        text-align: center;
+        border: none;
+        background: transparent;
+    }
+
+    .navigation-links .nav-link::after {
+        display: block;
+        bottom: 10px;
+        height: 2px;
+    }
+
+    /* Dark theme */
+    html[data-theme="dark"] .navigation-links {
+        background: #171717;
+        color: #f5f5f5;
+    }
+
+    html[data-theme="dark"] .navigation-links .nav-link {
+        color: #f5f5f5;
+    }
+
+    html[data-theme="dark"] .hamburger {
+        color: #f5f5f5;
+    }
+
+    /* Prevent background scrolling while menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 360px) {
+    .navigation {
+        padding: 10px;
+    }
+
+    .personal-logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .navigation-controls {
+        gap: 12px;
+    }
+}
+
+
