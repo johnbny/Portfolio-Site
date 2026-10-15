@@ -128,7 +128,7 @@ section {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1000;
+    z-index: 10;
     aspect-ratio: 1 / 1;
     object-fit: contain;
     cursor: pointer;
@@ -385,7 +385,8 @@ section {
 
     transition-delay: 0s;
     position: relative;
-    z-index:0;
+    z-index: 100;
+
 }
 
 .modal__about {
@@ -810,7 +811,7 @@ html[data-theme="dark"] .personal-logo img {
     bottom: 20px;
     width: 130px;
     height: 130px;
-    z-index: 10000;
+    z-index: 99;
     cursor: pointer;
 }
 
