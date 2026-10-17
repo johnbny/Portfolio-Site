@@ -173,3 +173,4 @@ window.addEventListener("resize", () => {
         toggleMenu(false);
     }
 });
+
