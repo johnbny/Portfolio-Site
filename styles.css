@@ -1891,3 +1891,7 @@ img {
         z-index: 100001;
     }
 }
+
+html {
+    scroll-behavior: smooth;
+}
