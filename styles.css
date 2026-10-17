@@ -181,6 +181,7 @@ section {
     margin-left: .4rem;
 }
 
+
 @keyframes arrow-bounce {
     0%, 100% {
         transform: translateY(0);
@@ -192,7 +193,9 @@ section {
 
 
 
-
+.js-modal-trigger {
+    cursor: pointer;
+}
 /*  */
 
 .project__section {
@@ -221,7 +224,10 @@ section {
     position: relative;
     display: block;
     margin-bottom: 4.5rem;
+    z-index: 5;
 }
+
+
 
 .project__wrapper img {
     width:100%;
@@ -793,7 +799,7 @@ html[data-theme="dark"] .project__section {
 html[data-theme="dark"] .footer {
     background-color: #f5f5f5;
     color: #171717;
-    filter: invert(1);
+    filter: invert(0);
 }
 
 /* ===== TEXT AND LINKS ===== */
@@ -824,6 +830,8 @@ html[data-theme="dark"] .footer__links a {
     color: #171717;
 }
 
+
+
 html[data-theme="dark"] .footer__copyright {
     color: #171717;
 }
@@ -832,6 +840,10 @@ html[data-theme="dark"] .footer__copyright {
 
 /* Keep the personal logo visible */
 html[data-theme="dark"] .personal-logo img {
+    filter: invert(1);
+}
+
+html[data-theme="dark"] .footer__logo img {
     filter: invert(1);
 }
 
@@ -961,7 +973,6 @@ html[data-theme="dark"] .mail_button img {
 
 /* ========================================
    RESPONSIVE DESIGN — TABLETS & MOBILE
-   Add this at the bottom of styles.css
 ======================================== */
 
 /* Prevent horizontal overflow */
@@ -1794,5 +1805,70 @@ img {
     .navigation-controls {
         gap: 12px;
     }
-} }
+} 
 
+
+.navigation,
+.landing-page-content,
+.socials,
+.scroll-indicator,
+.project__section__title,
+.project__description,
+.footer__logo,
+.footer__links,
+.footer__copyright,
+.footer {
+    position: relative;
+    z-index: 2;
+}
+
+.shape {
+    position: fixed;
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.shape--0 {
+    top: 15vh;
+    left: 5vw;
+}
+
+.shape--1 {
+    top: 15vh;
+    left: 50vw;
+}
+
+.shape--2 {
+    top: 15vh;
+    left: 80vw;
+}
+
+.shape--3 {
+    top: 50vh;
+    left: 5vw;
+}
+
+.shape--4 {
+    top: 50vh;
+    left: 50vw;
+}
+
+.shape--5 {
+    top: 50vh;
+    left: 80vw;
+}
+
+.shape--6 {
+    top: 95vh;
+    left: 5vw;
+}
+
+.shape--7 {
+    top: 95vh;
+    left: 50vw;
+}
+.shape--8 {
+    top: 95vh;
+    left: 80vw;
+}

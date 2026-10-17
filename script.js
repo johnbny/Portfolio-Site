@@ -174,3 +174,84 @@ window.addEventListener("resize", () => {
     }
 });
 
+document.querySelectorAll('.js-modal-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+        const modal = document.querySelector('.modal-overlay');
+
+        if (modal) {
+            modal.classList.add('is-open');
+            modal.classList.remove('is-closing');
+        }
+    });
+});
+
+const shapes = document.querySelectorAll(".shape");
+
+const shapeMotion = Array.from(shapes, () => ({
+    x: 0,
+    y: 0,
+    targetX: 0,
+    targetY: 0,
+    speed: 0.30 + Math.random() * 0.25,
+    strength: 40 + Math.random() * 100,
+    direction: Math.random() * Math.PI * 2,
+    phase: Math.random() * Math.PI * 2,
+    frequency: 0.5 + Math.random() * 1.5
+}));
+
+let mouseX = 0;
+let mouseY = 0;
+let activity = 0;
+let lastMouseMove = 0;
+let time = 0;
+let previousTime = performance.now();
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX / window.innerWidth - 0.5;
+    mouseY = e.clientY / window.innerHeight - 0.5;
+
+    lastMouseMove = performance.now();
+});
+
+function animateShapes() {
+    const now = performance.now();
+    const delta = Math.min((now - previousTime) / 16.667, 2);
+    previousTime = now;
+
+    time += delta / 60;
+
+    // Fade out gradually after the mouse stops
+    const isMoving = now - lastMouseMove < 100;
+
+    activity += ((isMoving ? 1 : 0) - activity) *
+        (1 - Math.pow(0.96, delta));
+
+    shapes.forEach((shape, index) => {
+        const motion = shapeMotion[index];
+
+        const angle =
+            motion.direction +
+            Math.sin(time * motion.frequency + motion.phase) * 2.2;
+
+        motion.targetX =
+            (mouseX * motion.strength +
+                Math.cos(angle) * motion.strength * 0.7) * activity;
+
+        motion.targetY =
+            (mouseY * motion.strength +
+                Math.sin(angle) * motion.strength * 0.7) * activity;
+
+        // Independent, smooth response for every shape
+        const easing = 1 - Math.pow(1 - motion.speed, delta);
+
+        motion.x += (motion.targetX - motion.x) * easing;
+        motion.y += (motion.targetY - motion.y) * easing;
+
+        shape.style.transform =
+            `translate3d(${motion.x}px, ${motion.y}px, 0)`;
+    });
+
+    requestAnimationFrame(animateShapes);
+}
+
+animateShapes();
