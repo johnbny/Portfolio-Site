@@ -1237,6 +1237,10 @@ img {
         transition: none;
     }
 
+    .project__description--bg:hover {
+        background-color: #a9a7a7;
+    }
+
     .project__description {
         position: relative;
         top: auto;
