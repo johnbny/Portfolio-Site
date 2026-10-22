@@ -185,6 +185,7 @@ document.querySelectorAll('.js-modal-trigger').forEach(trigger => {
     });
 });
 
+
 const shapes = document.querySelectorAll(".shape");
 
 const shapeMotion = Array.from(shapes, () => ({
@@ -196,7 +197,9 @@ const shapeMotion = Array.from(shapes, () => ({
     strength: 40 + Math.random() * 100,
     direction: Math.random() * Math.PI * 2,
     phase: Math.random() * Math.PI * 2,
-    frequency: 0.5 + Math.random() * 1.5
+    frequency: 0.5 + Math.random() * 1.5,
+    idlePhase: Math.random() * Math.PI * 2,
+    idleSpeed: 0.08 + Math.random() * 0.04
 }));
 
 let mouseX = 0;
@@ -233,11 +236,21 @@ function animateShapes() {
             motion.direction +
             Math.sin(time * motion.frequency + motion.phase) * 2.2;
 
+        // Very slow, continuous idle hovering
+        const idleX =
+            Math.cos(time * motion.idleSpeed + motion.idlePhase) * 60;
+
+        const idleY =
+            Math.sin(time * motion.idleSpeed + motion.idlePhase) * 60;
+
+        // Original mouse interaction remains unchanged
         motion.targetX =
+            idleX +
             (mouseX * motion.strength +
                 Math.cos(angle) * motion.strength * 0.7) * activity;
 
         motion.targetY =
+            idleY +
             (mouseY * motion.strength +
                 Math.sin(angle) * motion.strength * 0.7) * activity;
 
