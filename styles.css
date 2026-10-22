@@ -87,6 +87,15 @@ section {
         margin-right: .3rem;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     }
+    .socials i:hover{
+          filter: brightness(0.8);
+          transition: all 125ms ease;
+    }
+
+    .fa-square-github:hover{
+        filter: brightness(0.8);
+        transition: all 125ms ease;
+    }
 
    .click {
     transition: transform 0.15s ease;
@@ -195,6 +204,11 @@ section {
 
 .js-modal-trigger {
     cursor: pointer;
+}
+
+.js-modal-trigger:hover {
+    filter: brightness(0.75);
+    transition: all 125ms ease;
 }
 /*  */
 
