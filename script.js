@@ -268,3 +268,5 @@ function animateShapes() {
 }
 
 animateShapes();
+
+//background

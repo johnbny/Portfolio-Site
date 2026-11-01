@@ -63,16 +63,20 @@ section {
         font-size: 6rem;
     }
 
+    .hey {
+        color: white;
+    }
     .outlined-text {
         margin-top: -2rem;
     color: transparent;
-    -webkit-text-stroke: 1.3px rgb(0, 0, 0);
+    -webkit-text-stroke: 1.3px rgb(250, 249, 249);
     }
 
     .landing-page-bio {
         font-size: 1.4rem;
         width: 40%;
         margin-top: 1rem;
+        color: white;
     }
 
     .highlighted-text {
@@ -182,7 +186,7 @@ section {
 .scroll-link {
     display: inline-block;
     color: transparent;
-    -webkit-text-stroke: 0.88px #000;
+    -webkit-text-stroke: 0.88px #ffffff;
     animation: arrow-bounce 6s ease-in-out infinite;
 }
 
@@ -797,8 +801,13 @@ html[data-theme="dark"] .navigation {
 /* Landing page */
 html[data-theme="dark"] .landing-page {
     background-color: #171717;
-    color: #f5f5f5;
+    color: #000000;
 }
+
+html[data-theme="dark"] .scroll-link {
+    filter: invert(1);
+}
+
 
 /* Projects */
 html[data-theme="dark"] .project__section {
@@ -809,7 +818,26 @@ html[data-theme="dark"] .project__section {
 .hamburger {
     display: none;
 }
+html[data-theme="dark"] .landing-background {
+    filter: invert(0);
+}
 
+html[data-theme="dark"] .hey {
+    filter: invert(1);
+}
+
+html[data-theme="dark"] .landing-page-bio {
+    filter: invert(1);
+}
+html[data-theme="dark"] .highlighted-text {
+    filter: invert(1);
+}
+
+
+
+.landing-background {
+    filter: invert(1);
+}
 /* Footer */
 html[data-theme="dark"] .footer {
     background-color: #f5f5f5;
@@ -824,7 +852,7 @@ html[data-theme="dark"] .nav-link {
 }
 
 html[data-theme="dark"] .outlined-text {
-    -webkit-text-stroke-color: #f5f5f5;
+    -webkit-text-stroke-color: #000000;
 }
 
 html[data-theme="dark"] .scroll-link {
@@ -994,8 +1022,10 @@ html[data-theme="dark"] .mail_button img {
 html,
 body {
     width: 100%;
-    max-width: 100%;
-    overflow-x: clip;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #f7f7f7;
 }
 
 img {
@@ -1913,4 +1943,55 @@ img {
 
 html {
     scroll-behavior: smooth;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    background: #f7f7f7;
+}
+
+/* SOFT GRADIENT BLOB BACKGROUND */
+/* GRADIENT BLOB BACKGROUND */
+
+/* ========================================
+   MONOCHROME LIQUID GRADIENT BACKGROUND
+======================================== */
+
+
+.landing-page {
+    position: relative;
+    min-height: 100vh;
+    isolation: isolate;
+    background: #171717;
+}
+
+.landing-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.landing-content {
+    position: relative;
+    z-index: 1;
 }
