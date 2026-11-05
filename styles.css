@@ -819,7 +819,7 @@ html[data-theme="dark"] .project__section {
     display: none;
 }
 html[data-theme="dark"] .landing-background {
-    filter: invert(0);
+    filter: invert(1);
 }
 
 html[data-theme="dark"] .hey {
@@ -836,7 +836,7 @@ html[data-theme="dark"] .highlighted-text {
 
 
 .landing-background {
-    filter: invert(1);
+    filter: invert(0);
 }
 /* Footer */
 html[data-theme="dark"] .footer {
