@@ -57,6 +57,7 @@ section {
     .landing-page {
         height: 100vh;
         padding: 1.8rem;
+        background-color: rgb(245, 245, 245);
     }
 
     .landing-page-content h2 {
@@ -90,15 +91,6 @@ section {
         margin-top: 1rem;
         margin-right: .3rem;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    }
-    .socials i:hover{
-          filter: brightness(0.8);
-          transition: all 125ms ease;
-    }
-
-    .fa-square-github:hover{
-        filter: brightness(0.8);
-        transition: all 125ms ease;
     }
 
    .click {
@@ -208,11 +200,6 @@ section {
 
 .js-modal-trigger {
     cursor: pointer;
-}
-
-.js-modal-trigger:hover {
-    filter: brightness(0.75);
-    transition: all 125ms ease;
 }
 /*  */
 
@@ -818,9 +805,9 @@ html[data-theme="dark"] .project__section {
 .hamburger {
     display: none;
 }
-html[data-theme="dark"] .landing-background {
+/* html[data-theme="dark"] .landing-background {
     filter: invert(1);
-}
+} */
 
 html[data-theme="dark"] .hey {
     filter: invert(1);
@@ -835,14 +822,18 @@ html[data-theme="dark"] .highlighted-text {
 
 
 
-.landing-background {
+/* .landing-background {
     filter: invert(0);
-}
+} */
 /* Footer */
 html[data-theme="dark"] .footer {
     background-color: #f5f5f5;
     color: #171717;
     filter: invert(0);
+}
+
+.landing-background {
+    transparency: 1;  
 }
 
 /* ===== TEXT AND LINKS ===== */
